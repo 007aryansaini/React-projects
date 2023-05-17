@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a fully responsive landing page with all features.
 
 ## Available Scripts
 
