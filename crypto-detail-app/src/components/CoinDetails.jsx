@@ -115,12 +115,41 @@ const CoinDetails = () => {
               high={`${currencySymbol}${coin.market_data.high_24h[currency]}`}
               low={`${currencySymbol}${coin.market_data.low_24h[currency]}`}
             />
+
+            <Box w={"full"} p="4">
+              <Item title={"Max Supply"} value={coin.market_data.max_supply} />
+              <Item
+                title={"Circulating Supply"}
+                value={coin.market_data.circulating_supply}
+              />
+              <Item
+                title={"Market Cap"}
+                value={`${currencySymbol}${coin.market_data.market_cap[currency]}`}
+              />
+              <Item
+                title={"All Time Low"}
+                value={`${currencySymbol}${coin.market_data.atl[currency]}`}
+              />
+              <Item
+                title={"All Time High"}
+                value={`${currencySymbol}${coin.market_data.ath[currency]}`}
+              />
+            </Box>
           </VStack>
         </>
       )}
     </Container>
   );
 };
+
+const Item = ({ title, value }) => (
+  <HStack justifyContent={"space-between"} w={"full"} my={"4"}>
+    <Text fontFamily={"Bebas Neue"} letterSpacing={"widest"}>
+      {title}
+    </Text>
+    <Text>{value}</Text>
+  </HStack>
+);
 
 const CustomBar = ({ high, low }) => (
   <VStack w={"full"}>
